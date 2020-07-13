@@ -3370,7 +3370,7 @@ JitsiConference.prototype._initializeE2EEncryption = function() {
     this._e2eEncryption = new E2EEncryption(this, { salt: this.options.name });
 
     // Need to re-create the peerconnections in order to apply the insertable streams constraint
-    this.stopP2PSession();
+    this.p2pJingleSession && this.stopP2PSession();
 
     const jvbJingleSession = this.jvbJingleSession;
 
